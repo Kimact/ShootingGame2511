@@ -5,7 +5,7 @@ public class PlayerController : MonoBehaviour
     private IMovement movement;
     private IInputHandler inputHandler;
 
-    private void Awake()
+    private void Start()
     {
         inputHandler = GetComponent<PlayerInput>() as IInputHandler;
         movement = GetComponent<PlayerMovement>() as IMovement;

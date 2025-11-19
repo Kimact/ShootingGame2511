@@ -7,7 +7,9 @@ public class PlayerController : MonoBehaviour, IManager
 
     public void GameInitialize()
     {
-        throw new System.NotImplementedException();
+        inputHandler = GetComponent<PlayerInput>() as IInputHandler;
+        movement = GetComponent<PlayerMovement>() as IMovement; // IMovement 로 형변환하고 movement 에 참조를 걸어줌.
+
     }
 
     public void GameOver()
@@ -30,27 +32,15 @@ public class PlayerController : MonoBehaviour, IManager
         movement?.SetEnable(true);
     }
 
-    private void Awake()
-    {
-        inputHandler = GetComponent<PlayerInput>() as IInputHandler;
-        movement = GetComponent<PlayerInput> () as IMovement; // IMovement 로 형변환하고 movement 에 참조를 걸어줌.
-
-
-        movement?.SetEnable(true);
-    }
-
     void IManager.GameTick(float delta)
     {
         if (movement == null) return;
         if (inputHandler == null) return;
 
-        movement.Move(inputHandler.GetInput());
+        movement.Move(delta, inputHandler.GetInput());
 
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }

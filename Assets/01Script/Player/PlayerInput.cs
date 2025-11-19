@@ -11,7 +11,7 @@ public class PlayerInput : MonoBehaviour, IInputHandler
 #endif
 
 #if UNITY_ANDROID || UNITY_IOS
-    curInputHandle = GetComponent <Input_Joystick() as IInputHandler;
+    curInputHandle = GetComponent<Input_Joystick>() as IInputHandler;
 #endif
     }
     public Vector2 GetInput()

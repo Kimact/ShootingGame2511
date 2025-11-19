@@ -10,21 +10,29 @@ public class PlayerMovement : MonoBehaviour ,IMovement
 
     private Vector3 moveDelta;
 
-    public void Move(Vector2 direction)
+    public void Move(float delta , Vector2 direction)
     {
         if(isMoving)
         {
-            moveDelta = new Vector3(direction.x, direction.y, 0f) * (moveSpeed * Time.deltaTime);
+            moveDelta = new Vector3(direction.x, direction.y, 0f) * (moveSpeed * delta);
             
+
             Vector3 newPos = transform.position + moveDelta;
 
 
+
+            // 이동 범위 제한
+
+            newPos.x = Mathf.Clamp(newPos.x, minArea.x, maxArea.x);
+            newPos.y = Mathf.Clamp(newPos.y, maxArea.y, minArea.y);
+
+            transform.position = newPos;
         }
     }
 
     public void SetEnable(bool newEnable)
     {
-        throw new System.NotImplementedException();
+        isMoving = newEnable;
     }
 
    

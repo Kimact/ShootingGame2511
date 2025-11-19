@@ -11,7 +11,7 @@ public class PlayerInput : MonoBehaviour, IInputHandler
 #endif
 
 #if UNITY_ANDROID || UNITY_IOS
-    curInputHandle = GetComponent <Input_Joystick() as IInputHandler;
+        curInputHandle = GetComponent<Input_Joystick>() as IInputHandler;
 #endif
     }
     public Vector2 GetInput()
@@ -34,6 +34,6 @@ public class PlayerInput : MonoBehaviour, IInputHandler
     // Update is called once per frame
     void Update()
     {
-        Debug.Log($"ÀÔ·Â°ª È®ÀÎ {GetInput()}");
+        Debug.Log($"ï¿½Ô·Â°ï¿½ È®ï¿½ï¿½ {GetInput()}");
     }
 }

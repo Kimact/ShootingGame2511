@@ -8,10 +8,10 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         inputHandler = GetComponent<PlayerInput>() as IInputHandler;
-        movement = GetComponent<PlayerInput> () as IMovement; // IMovement 로 형변환하고 movement 에 참조를 걸어줌.
+        movement = GetComponent<PlayerMovement>() as IMovement;
 
         movement?.SetEnable(true);
-        
+
     }
 
     // Update is called once per frame

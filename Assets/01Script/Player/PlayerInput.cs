@@ -8,10 +8,14 @@ public class PlayerInput : MonoBehaviour, IInputHandler
     {
 #if UNITY_STANDALONE || UNITY_EDITOR
         curInputHandle = GetComponent<Input_KeyBoard>() as IInputHandler;
+        if (curInputHandle == null)
+            Debug.LogError("PlayerInput: Input_KeyBoard component not found!");
 #endif
 
 #if UNITY_ANDROID || UNITY_IOS
         curInputHandle = GetComponent<Input_Joystick>() as IInputHandler;
+        if (curInputHandle == null)
+            Debug.LogError("PlayerInput: Input_Joystick component not found!");
 #endif
     }
     public Vector2 GetInput()

@@ -7,6 +7,8 @@ public class BattleSceneManager : MonoBehaviour
     bool isPlaying = false;
     private void Awake()
     {
+  
+    
         GameObject obj;
         obj = GameObject.Find("Player");
         if(obj != null )

@@ -39,7 +39,5 @@ public class PlayerController : MonoBehaviour, IManager
         movement.Move(delta, inputHandler.GetInput());
 
     }
-
-    // Update is called once per frame
    
 }

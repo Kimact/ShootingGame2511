@@ -35,5 +35,4 @@ public class PlayerMovement : MonoBehaviour ,IMovement
         isMoving = newEnable;
     }
 
-   
 }

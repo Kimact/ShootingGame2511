@@ -8,8 +8,7 @@ public class PlayerController : MonoBehaviour, IManager
     public void GameInitialize()
     {
         inputHandler = GetComponent<PlayerInput>() as IInputHandler;
-        movement = GetComponent<PlayerMovement>() as IMovement; // IMovement 로 형변환하고 movement 에 참조를 걸어줌.
-
+        movement = GetComponent<IMovement>();
     }
 
     public void GameOver()
@@ -32,7 +31,7 @@ public class PlayerController : MonoBehaviour, IManager
         movement?.SetEnable(true);
     }
 
-    void IManager.GameTick(float delta)
+    public void GameTick(float delta)
     {
         if (movement == null) return;
         if (inputHandler == null) return;

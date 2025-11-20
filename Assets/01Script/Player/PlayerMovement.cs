@@ -5,8 +5,8 @@ public class PlayerMovement : MonoBehaviour ,IMovement
     private bool isMoving = false;
     [SerializeField] private float moveSpeed = 5f;
 
-    private Vector2 minArea = new Vector2(-2f, 4.5f);
-    private Vector2 maxArea = new Vector2(2f,0f);
+    private Vector2 minArea = new Vector2(-2f, -4.5f);
+    private Vector2 maxArea = new Vector2(2f,0);
 
     private Vector3 moveDelta;
 
@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour ,IMovement
             // 이동 범위 제한
 
             newPos.x = Mathf.Clamp(newPos.x, minArea.x, maxArea.x);
-            newPos.y = Mathf.Clamp(newPos.y, maxArea.y, minArea.y);
+            newPos.y = Mathf.Clamp(newPos.y, minArea.y, maxArea.y);
 
             transform.position = newPos;
         }

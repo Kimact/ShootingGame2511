@@ -32,4 +32,11 @@ public class BattleSceneManager : MonoBehaviour
         playerManager?.GameStart();
         yield return new WaitForSeconds(2f);
     }
+    private void Update()
+    {
+        if(isPlaying)
+        {
+            playerManager?.GameTick(Time.deltaTime);
+        }
+    }
 }

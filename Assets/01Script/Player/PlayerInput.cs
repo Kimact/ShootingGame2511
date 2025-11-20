@@ -27,9 +27,6 @@ public class PlayerInput : MonoBehaviour, IInputHandler
 
  
 
-    // Update is called once per frame
-    void Update()
-    {
-        Debug.Log($"입력값 확인 {GetInput()}");
-    }
+    
+   
 }

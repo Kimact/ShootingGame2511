@@ -27,7 +27,7 @@ public class BattleSceneManager : MonoBehaviour
         for (int i = 5; i >= 0; --i) 
         {
             Debug.Log($"게임시작 준비중....{i}");
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1f);
         }
         isPlaying = true;
 

@@ -82,13 +82,15 @@ public class Projectile : MonoBehaviour, IMovement
 
         if (collision.CompareTag("DestroyArea"))
         {
+            ProjectileManager.Inst.ReturnProjectileToPool(this, type);
             return; // ÆÄ±«
         }
 
         if(collision.TryGetComponent<IDamaged>(out IDamaged component))
         {
-            component.TakeDamage(owner, damage);
 
+            component.TakeDamage(owner, damage);
+            ProjectileManager.Inst.ReturnProjectileToPool(this, type);
             return;
         }
     }

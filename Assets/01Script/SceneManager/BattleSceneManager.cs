@@ -7,8 +7,6 @@ public class BattleSceneManager : MonoBehaviour
     private IManager scrollManager;
     private IManager spawnManager;
 
-
-
     bool isPlaying = false;
 
     private void Awake()
@@ -51,6 +49,8 @@ public class BattleSceneManager : MonoBehaviour
         if(isPlaying)
         {
             playerManager?.GameTick(Time.deltaTime);
+            scrollManager?.GameTick(Time.deltaTime);
+            spawnManager?.GameTick(Time.deltaTime);  
         }
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(CircleCollider2D))]
 public class Enemy : MonoBehaviour, IMovement, IDamaged
 {
-    private Vector2 moveDir;
+    private Vector2 moveDir =Vector2.down;
     private float moveSpeed = 3f;
     private bool isInit = false;
 

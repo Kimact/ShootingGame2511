@@ -48,7 +48,7 @@ public class Projectile : MonoBehaviour, IMovement
         type = newtype;
         moveDir = newDir;
         owner = newOwner;
-        ownerTag = owner.tag;
+        ownerTag = owner.name;
         damage = newDamage;
         moveSpeed = newSpeed;
         SetEnable(true);

@@ -30,7 +30,10 @@ public class ScrollManager : MonoBehaviour, IManager
 
     public void GameStart()
     {
-        throw new System.NotImplementedException();
+        foreach(var c in scrollers)
+        {
+            c.SetScrollSpeed(scrollSpeed);
+        }
     }
 
     public void GameTick(float delta)
@@ -41,15 +44,5 @@ public class ScrollManager : MonoBehaviour, IManager
         }
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  
 }
